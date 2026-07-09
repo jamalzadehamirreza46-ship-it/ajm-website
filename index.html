@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>AJM | خرید و فروش هوشمند خودرو دست‌دوم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #14110d;
+    --panel: #1d1812;
+    --panel-2: #241d15;
+    --gold: #c9891a;
+    --copper: #8a5a00;
+    --cream: #f1ead9;
+    --muted: #8c8377;
+    --green: #4f8a5b;
+    --red: #a8453a;
+    --border: #33291b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 10% -5%, rgba(201,137,26,0.08), transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(138,90,0,0.09), transparent 45%);
+    color: var(--cream);
+    direction: rtl;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ===== Nav ===== */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px;
+    background: rgba(20,17,13,0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo { font-size: 20px; font-weight: 900; color: var(--gold); letter-spacing: 1px; }
+  .nav-links { display: flex; gap: 18px; font-size: 13px; color: var(--muted); }
+  .nav-links a:hover { color: var(--cream); }
+
+  /* ===== Hero ===== */
+  .hero {
+    padding: 56px 20px 40px;
+    text-align: center;
+    position: relative;
+  }
+  .hero .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11.5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+  }
+  .hero .badge .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+  }
+  .hero h1 {
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.35;
+    margin-bottom: 14px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero p {
+    font-size: 14.5px;
+    color: var(--muted);
+    max-width: 380px;
+    margin: 0 auto 30px;
+    line-height: 1.9;
+  }
+  .hero-actions {
+    display: flex; flex-direction: column; gap: 12px;
+    max-width: 320px; margin: 0 auto;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: #1a1206;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--cream);
+    font-weight: 500;
+    font-size: 14.5px;
+    padding: 14px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  /* ===== Stats strip ===== */
+  .stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    max-width: 420px; margin: 40px auto 0;
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+  }
+  .stats div { text-align: center; }
+  .stats .num { font-size: 20px; font-weight: 900; color: var(--gold); }
+  .stats .lbl { font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+
+  /* ===== Sections ===== */
+  section { padding: 46px 20px; max-width: 480px; margin: 0 auto; }
+  .section-head { text-align: center; margin-bottom: 26px; }
+  .section-head .eyebrow {
+    font-size: 11px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 8px; display: block;
+  }
+  .section-head h2 { font-size: 21px; font-weight: 700; }
+
+  /* ===== Feature cards ===== */
+  .features { display: flex; flex-direction: column; gap: 14px; }
+  .feature-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .feature-card .icon-box {
+    width: 42px; height: 42px; flex-shrink: 0;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 19px;
+  }
+  .feature-card h3 { font-size: 14.5px; margin-bottom: 5px; color: var(--cream); }
+  .feature-card p { font-size: 12.3px; color: var(--muted); line-height: 1.8; }
+
+  /* ===== How it works ===== */
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: flex; gap: 16px;
+    padding-bottom: 26px;
+    position: relative;
+  }
+  .step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    right: 17px; top: 38px; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+  .step .num-circle {
+    width: 36px; height: 36px; flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #1a1206;
+    font-weight: 900;
+    font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1;
+  }
+  .step h4 { font-size: 14px; margin-bottom: 4px; }
+  .step p { font-size: 12.3px; color: var(--muted); line-height: 1.8; }
+
+  /* ===== Listings preview ===== */
+  #listingsPreview {
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .listing-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+  }
+  .listing-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .listing-top h4 { font-size: 15px; }
+  .listing-top .year { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+  .trust-badge {
+    font-size: 10.5px; font-weight: 700;
+    padding: 4px 9px; border-radius: 8px;
+    background: rgba(79,138,91,0.15);
+    color: var(--green);
+    white-space: nowrap;
+  }
+  .trust-badge.mid { background: rgba(201,137,26,0.15); color: var(--gold); }
+  .trust-badge.low { background: rgba(168,69,58,0.15); color: var(--red); }
+  .listing-meta {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: var(--muted);
+  }
+  .listing-price { color: var(--gold); font-weight: 700; font-size: 14px; }
+  .loading-text { text-align: center; color: var(--muted); font-size: 12.5px; padding: 20px; }
+
+  /* ===== CTA banner ===== */
+  .cta-banner {
+    margin: 20px 20px 0;
+    background: linear-gradient(135deg, var(--panel-2), var(--panel));
+    border: 1px solid var(--gold);
+    border-radius: 16px;
+    padding: 28px 22px;
+    text-align: center;
+  }
+  .cta-banner h3 { font-size: 18px; margin-bottom: 8px; }
+  .cta-banner p { font-size: 12.5px; color: var(--muted); margin-bottom: 18px; line-height: 1.8; }
+
+  /* ===== Footer ===== */
+  footer {
+    margin-top: 50px;
+    padding: 30px 20px 26px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  footer .flogo { font-size: 16px; font-weight: 900; color: var(--gold); margin-bottom: 6px; }
+  footer p { font-size: 11px; color: var(--muted); }
+  footer .flinks { display: flex; justify-content: center; gap: 16px; margin: 14px 0; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">AJM</div>
+  <div class="nav-links">
+    <a href="sell.html">ثبت آگهی</a>
+    <a href="assistant.html">دستیار هوشمند</a>
+    <a href="support.html">پشتیبانی</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge"><span class="dot"></span>پلتفرم نسل جدید خودرو دست‌دوم</div>
+  <h1>خرید و فروش خودرو<br>با <span>اعتماد کامل</span></h1>
+  <p>هر آگهی با امتیاز اعتماد، قیمت منصفانه، و تماس امن — بدون نگرانی از کلاهبرداری یا چانه‌زنی کور.</p>
+  <div class="hero-actions">
+    <a href="assistant.html" class="btn-primary">جست‌وجوی خودرو با دستیار هوشمند</a>
+    <a href="sell.html" class="btn-secondary">ثبت آگهی فروش</a>
+  </div>
+  <div class="stats">
+    <div><div class="num">۶+</div><div class="lbl">آگهی فعال</div></div>
+    <div><div class="num">۱۰۰٪</div><div class="lbl">تماس امن</div></div>
+    <div><div class="num">۲۴/۷</div><div class="lbl">دستیار هوشمند</div></div>
+  </div>
+</div>
+
+<section>
+  <div class="section-head">
+    <span class="eyebrow">چرا AJM</span>
+    <h2>چیزی که هیچ‌کس دیگه نداره</h2>
+  </div>
+  <div class="features">
+    <div class="feature-card">
+      <div class="icon-box">🛡️</div>
+      <div>
+        <h3>امتیاز اعتماد شفاف</h3>
+        <p>هر خودرو بر اساس سابقه، کارکرد، و احراز هویت فروشنده امتیازدهی می‌شه.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="icon-box">💬</div>
+      <div>
+        <h3>دستیار هوشمند قیمت‌گذاری</h3>
+        <p>در چند ثانیه بپرس و قیمت منصفانه بازار رو بر اساس داده واقعی بگیر.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="icon-box">📞</div>
+      <div>
+        <h3>تماس امن</h3>
+        <p>اولین تماس همیشه از طریق پلتفرم؛ شماره واقعی هیچ‌وقت مستقیم افشا نمی‌شه.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="icon-box">📊</div>
+      <div>
+        <h3>قیمت واقعی بازار</h3>
+        <p>قیمت واقعی بازار رو اینجا پیدا می‌کنی — بدون واسطه، بدون گمانه‌زنی، بر اساس داده واقعی آگهی‌ها.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <span class="eyebrow">مراحل کار</span>
+    <h2>سه قدم ساده</h2>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="num-circle">۱</div>
+      <div><h4>جست‌وجو کن</h4><p>با دستیار هوشمند یا فیلترها، خودروی موردنظرت رو پیدا کن.</p></div>
+    </div>
+    <div class="step">
+      <div class="num-circle">۲</div>
+      <div><h4>اعتماد رو بررسی کن</h4><p>امتیاز اعتماد و قیمت منصفانه هر آگهی رو ببین.</p></div>
+    </div>
+    <div class="step">
+      <div class="num-circle">۳</div>
+      <div><h4>امن تماس بگیر</h4><p>از طریق پلتفرم با فروشنده در ارتباط باش.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <span class="eyebrow">آگهی‌های تازه</span>
+    <h2>چند نمونه از بازار</h2>
+  </div>
+  <div id="listingsPreview">
+    <div class="loading-text">در حال بارگذاری آگهی‌ها...</div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <h3>ماشینت رو می‌فروشی؟</h3>
+  <p>ثبت آگهی رایگانه و فقط چند دقیقه طول می‌کشه.</p>
+  <a href="sell.html" class="btn-primary" style="display:inline-block; padding:13px 28px;">ثبت آگهی رایگان</a>
+</div>
+
+<footer>
+  <div class="flogo">AJM</div>
+  <div class="flinks">
+    <a href="sell.html">ثبت آگهی</a>
+    <a href="assistant.html">دستیار هوشمند</a>
+    <a href="support.html">پشتیبانی</a>
+  </div>
+  <p>AJM &copy; ۱۴۰۵ — ساخته‌شده در تبریز</p>
+</footer>
+
+<script>
+  async function loadListings() {
+    const container = document.getElementById('listingsPreview');
+    try {
+      const res = await fetch('/api/listings');
+      const data = await res.json();
+      const items = (data.listings || []).slice(0, 4);
+
+      if (items.length === 0) {
+        container.innerHTML = '<div class="loading-text">فعلاً آگهی‌ای ثبت نشده.</div>';
+        return;
+      }
+
+      container.innerHTML = items.map(l => {
+        const badgeClass = l.trustScore >= 80 ? '' : l.trustScore >= 60 ? 'mid' : 'low';
+        const priceFormatted = (l.price / 1000000).toLocaleString('fa-IR') + ' میلیون تومان';
+        return `
+          <div class="listing-card">
+            <div class="listing-top">
+              <div>
+                <h4>${l.model}</h4>
+                <div class="year">مدل ${l.year} — ${l.city}</div>
+              </div>
+              <div class="trust-badge ${badgeClass}">اعتماد ${l.trustScore}</div>
+            </div>
+            <div class="listing-meta">
+              <span>${l.mileage.toLocaleString('fa-IR')} کیلومتر</span>
+              <span class="listing-price">${priceFormatted}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    } catch (err) {
+      container.innerHTML = '<div class="loading-text">اتصال به سرور برقرار نشد.</div>';
+    }
+  }
+  loadListings();
+</script>
+
+</body>
+</html>
