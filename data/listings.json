@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "model": "BMW 520i",
+    "year": 1401,
+    "mileage": 42000,
+    "city": "تبریز",
+    "price": 3850000000,
+    "trustScore": 88,
+    "bodyType": "سدان",
+    "accident": false,
+    "desc": "بدون رنگ، تک‌مالک، سرویس منظم آژانس"
+  },
+  {
+    "id": 2,
+    "model": "پژو 207",
+    "year": 1399,
+    "mileage": 78000,
+    "city": "تبریز",
+    "price": 780000000,
+    "trustScore": 71,
+    "bodyType": "هاچبک",
+    "accident": false,
+    "desc": "دوگانه‌سوز کارخانه، لاستیک نو"
+  },
+  {
+    "id": 3,
+    "model": "سمند LX",
+    "year": 1398,
+    "mileage": 110000,
+    "city": "اردبیل",
+    "price": 520000000,
+    "trustScore": 54,
+    "bodyType": "سدان",
+    "accident": true,
+    "desc": "یک درب رنگ، بدنه سالم"
+  },
+  {
+    "id": 4,
+    "model": "هیوندای سوناتا",
+    "year": 1400,
+    "mileage": 55000,
+    "city": "تبریز",
+    "price": 2100000000,
+    "trustScore": 82,
+    "bodyType": "سدان",
+    "accident": false,
+    "desc": "فول آپشن، بیمه کامل"
+  },
+  {
+    "id": 5,
+    "model": "پراید 111",
+    "year": 1397,
+    "mileage": 145000,
+    "city": "ارومیه",
+    "price": 310000000,
+    "trustScore": 60,
+    "bodyType": "هاچبک",
+    "accident": false,
+    "desc": "اقتصادی، مناسب کارکرد شهری"
+  },
+  {
+    "id": 6,
+    "model": "تویوتا کمری",
+    "year": 1402,
+    "mileage": 18000,
+    "city": "تبریز",
+    "price": 5200000000,
+    "trustScore": 95,
+    "bodyType": "سدان",
+    "accident": false,
+    "desc": "در حد صفر، گارانتی نمایندگی"
+  }
+]
